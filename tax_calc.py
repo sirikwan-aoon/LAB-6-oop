@@ -16,4 +16,15 @@ def calculate_tax(income):
     else:
         return 0
 
+def calculate_deduction(type): #just example, not all type
+    if type == "self":
+        return 60000
+    elif type == "social security":
+        return 9000
+    elif type == "life insurance":
+        return 100000
+    elif type == "health insurance":
+        return 25000
+
 print(f"Tax = {calculate_tax(235000)} Baht")
+print(f"Deduction = {calculate_deduction('self')} Baht")
