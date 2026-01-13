@@ -26,5 +26,18 @@ def calculate_deduction(type): #just example, not all type
     elif type == "health insurance":
         return 25000
 
-print(f"Tax = {calculate_tax(235000)} Baht")
-print(f"Deduction = {calculate_deduction('self')} Baht")
+my_income = 1000000
+deductions = [
+    calculate_deduction("self"),
+    calculate_deduction("social security"),
+    calculate_deduction("life insurance")
+]
+
+total_deduction = sum(deductions)
+
+net_income = my_income - total_deduction
+if net_income < 0: net_income = my_income
+
+print(f"Tax = {calculate_tax(my_income)} Baht")
+print(f"Deduction = {total_deduction} Baht")
+print(f"Tax after deductions = {calculate_tax(net_income)} Baht")
